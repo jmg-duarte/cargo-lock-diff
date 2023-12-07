@@ -1,5 +1,5 @@
 [package]
-name = "cargo-lock-diff"
+name = "lock-diff"
 version = "0.0.1"
 edition = "2021"
 
@@ -9,3 +9,4 @@ edition = "2021"
 clap = { version = "4.4.11", features = ["derive"] }
 serde = { version = "1.0.193", features = ["derive"] }
 toml = "0.8.8"
+colored = "2.0.4"
