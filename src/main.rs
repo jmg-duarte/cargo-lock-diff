@@ -3,6 +3,7 @@ use std::path::PathBuf;
 use clap::Parser;
 use colored::control::set_override;
 use lock_diff::{CargoLock, CargoLockDiff};
+use pager::Pager;
 
 #[derive(Parser)]
 struct Cli {
@@ -14,10 +15,17 @@ struct Cli {
 
     #[arg(short, default_value = "false")]
     verbose: bool,
+
+    #[arg(long, default_value = "false")]
+    no_pager: bool,
 }
 
 fn main() {
     let cli = Cli::parse();
+
+    if !cli.no_pager {
+        Pager::new().setup();
+    }
 
     let old_lock = CargoLock::load_lock(cli.old);
     let new_lock = CargoLock::load_lock(cli.new);
