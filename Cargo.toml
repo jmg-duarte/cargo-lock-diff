@@ -1,9 +1,15 @@
 [package]
 name = "lock-diff"
-version = "0.0.1"
+version = "0.1.0"
 edition = "2021"
-
-# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+authors = ["José Duarte <duarte.gmj@gmail.com>"]
+license-file = "LICENSE"
+description = "Diff between `Cargo.lock`"
+documentation = "https://docs.rs/lock-diff"
+readme = "README.md"
+repository = "https://github.com/jmg-duarte/lock-diff"
+categories = ["lockfile", "cli", "diff"]
+rust-version = "1.70.0"
 
 [dependencies]
 clap = { version = "4.4.11", features = ["derive"] }
